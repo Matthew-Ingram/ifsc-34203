@@ -28,10 +28,16 @@ body {
 	background-color: #171717;
 }
 
-/*
+
 #header h1 a {
+	background-image: url("../resources/assessment-3.jpg");
+	display: block;
+	width: 800px;
+	height: 140px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
 }
-*/
 
 #nav {
 	background-color: #000;
@@ -76,6 +82,29 @@ body {
 #content p {
 	margin-top: 5px;
 	margin-bottom: 15px;
+}
+
+.alert {
+	background-color: #0000ff;
+	color: #ffff00;
+}
+
+#content h2 {
+	color:#fae465;
+	font-size: large;
+	font-weight: bolder;
+}
+
+#content h3 {
+	color:#18c9ff;
+	font-size: medium;
+	font-weight: bold;
+}
+
+#content h4 {
+	color:#1b0cf0;
+	font-size: medium;
+	font-style: italic;
 }
 
 #footer {
