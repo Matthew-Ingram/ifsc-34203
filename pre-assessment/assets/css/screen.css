@@ -129,7 +129,8 @@ body {
 	padding: 0 0 0 1rem; 
 }
 
-#content blockquote cite {
+#content cite {
+	display: block;
 	text-align: right;
 }
 
