@@ -89,22 +89,40 @@ body {
 	color: #ffff00;
 }
 
+.hover_element:hover {
+	background-color: #ff0000;
+}
+
+#content figure {
+	float: right;
+	margin: 20px;
+	border: 2px solid #CCC;
+	padding: 4px;
+}
+
 #content h2 {
 	color:#fae465;
-	font-size: large;
+	font-size: larger;
 	font-weight: bolder;
+	text-shadow: 2px 2px 2px #000000;
 }
 
 #content h3 {
 	color:#18c9ff;
-	font-size: medium;
+	font-size: large;
 	font-weight: bold;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 #content h4 {
 	color:#1b0cf0;
 	font-size: medium;
 	font-style: italic;
+}
+
+#content blockquote {
+	border: 2px solid #CCC;
+	padding: 8px;
 }
 
 #footer {
