@@ -120,6 +120,19 @@ body {
 	font-style: italic;
 }
 
+#content blockquote {
+	border: 2px solid #CCC;
+	padding: 4px;
+}
+
+#content blockquote	dl {
+	padding: 0 0 0 1rem; 
+}
+
+#content blockquote cite {
+	text-align: right;
+}
+
 #footer {
 	background-color: #000;
 	color: #FFF;
