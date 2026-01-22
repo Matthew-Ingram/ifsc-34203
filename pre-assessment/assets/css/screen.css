@@ -104,7 +104,7 @@ body {
 	color:#fae465;
 	font-size: larger;
 	font-weight: bolder;
-	text-shadow: 2px 2px 2px #000000;
+	text-shadow: 1px 1px 1px #000000;
 }
 
 #content h3 {
@@ -118,11 +118,6 @@ body {
 	color:#1b0cf0;
 	font-size: medium;
 	font-style: italic;
-}
-
-#content blockquote {
-	border: 2px solid #CCC;
-	padding: 8px;
 }
 
 #footer {
