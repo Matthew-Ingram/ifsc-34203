@@ -93,7 +93,7 @@ body {
 	background-color: #ff0000;
 }
 
-#content img {
+#content figure {
 	float: right;
 	margin: 20px;
 	border: 2px solid #CCC;
