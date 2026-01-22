@@ -121,6 +121,7 @@ body {
 }
 
 #content blockquote {
+	display: block;
 	border: 2px solid #CCC;
 	padding: 4px;
 }
