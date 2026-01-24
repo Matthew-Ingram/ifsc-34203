@@ -7,6 +7,8 @@
 body {
 	text-align: center;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-image: url("../img/bg-tile.jpg");
+	background-repeat: repeat-x;
 	background-color: #171717;
 	font-size: 16px;
 	line-height: 1.5em;
@@ -23,14 +25,12 @@ body {
 }
 
 #header {
-	background-image: url("../img/bg-tile.jpg");
-	background-repeat: repeat-x;
-	background-color: #171717;
+	background-image: url("../img/masthead.webp");
+	width: 800px;
+	height: 140px;
 }
 
-
 #header h1 a {
-	background-image: url("../resources/assessment-3.jpg");
 	display: block;
 	width: 800px;
 	height: 140px;
@@ -79,7 +79,7 @@ body {
 	margin: 20px;
 }
 
-#content p {
+#content p, #content dl {
 	margin-top: 5px;
 	margin-bottom: 15px;
 }
@@ -89,11 +89,11 @@ body {
 	color: #ffff00;
 }
 
-.hover_element:hover {
+.hover-element:hover {
 	background-color: #ff0000;
 }
 
-#content figure {
+.image-right {
 	float: right;
 	margin: 20px;
 	border: 2px solid #CCC;
@@ -104,35 +104,20 @@ body {
 	color:#fae465;
 	font-size: larger;
 	font-weight: bolder;
-	text-shadow: 1px 1px 1px #000000;
+	text-shadow: 1px 1px 0 #000000;
 }
 
 #content h3 {
 	color:#18c9ff;
 	font-size: large;
 	font-weight: bold;
-	text-shadow: 1px 1px 1px #000000;
+	text-shadow: 1px 1px 0 #000000;
 }
 
 #content h4 {
 	color:#1b0cf0;
 	font-size: medium;
 	font-style: italic;
-}
-
-#content blockquote {
-	display: block;
-	border: 2px solid #CCC;
-	padding: 4px;
-}
-
-#content blockquote	dl {
-	padding: 0 0 0 1rem; 
-}
-
-#content cite {
-	display: block;
-	text-align: right;
 }
 
 #footer {
