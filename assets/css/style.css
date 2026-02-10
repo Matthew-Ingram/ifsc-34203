@@ -1,0 +1,27 @@
+:root {
+  --light-color: #88dd66;
+  --medium-color: #558844;
+  --dark-color: #335533;
+  --darker-color: #203020;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: var(--darker-color);
+  margin: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin: 20px auto;
+    padding: 20px;
+	text-align: left;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+    border-radius: 10px;
+}
