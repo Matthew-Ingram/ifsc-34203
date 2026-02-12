@@ -1,0 +1,58 @@
+/* This code is adapted from Professor Thomas Wallace's codecast on codepen */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/* Fix Clearing Bugs */
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+main {
+/* background-image: url("../resources/grid.png"); */
+/* width: 920px; */
+width: 90vw;
+margin: 30px auto;
+border: 1px solid #000;  
+}
+
+header.primary, footer.primary{
+/*  width: 860px; */
+ width: 93.478%;
+ background: rgba(0, 0, 0, 0.1);
+ margin: 3.4883%;
+ padding: 30px;
+ float: left; 
+}
+
+#blog{
+/* width: 562px; */
+  width: 61.086%;
+  margin-left: 3.4883%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  float: left;
+
+}
+
+aside {
+  background: rgba(0, 0, 0, 0.3);
+  /* width: 266px; */
+  width: 28.913%;
+  margin-left: 3.4883%;
+  padding: 30px;
+  float: left;
+}
