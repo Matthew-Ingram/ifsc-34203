@@ -1,0 +1,88 @@
+/* This code is adapted from Professor Thomas Wallace's codecast on codepen */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+/* Fix Clearing Bugs */
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+main {
+    /* background-image: url("../resources/grid.png"); */
+    /* width: 920px; */
+    /* background-size: contain; */
+    width: 90vw;
+    margin: 30px auto;
+    border: 1px solid #000;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 60px;
+    padding-top: 60px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+header.primary{
+    /* width: 860px; */
+    background: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+footer.primary{
+    /*  width: 860px; */
+    background: rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#content{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display:grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+}
+
+#blog{
+    /* width: 562px; */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    grid-column-start: 1;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+aside {
+    /* width: 266px; */
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    grid-column-start: 9;
+    grid-column-end: 13;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
