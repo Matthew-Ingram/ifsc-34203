@@ -1,8 +1,53 @@
 :root {
-  --light-color: #88dd66;
-  --medium-color: #558844;
-  --dark-color: #335533;
-  --darker-color: #203020;
+  --light-color: #dd6666;
+  --medium-color: #88444d;
+  --dark-color: #553341;
+  --darker-color: #302029;
+}
+
+@media screen and (max-width: 96rem) {
+  :root {
+    --light-color: #ddaa66;
+    --medium-color: #885944;
+    --dark-color: #553333;
+    --darker-color: #302027;
+  }
+}
+
+@media screen and (max-width: 80rem) {
+  :root {
+    --light-color: #cbdd66;
+    --medium-color: #6e8844;
+    --dark-color: #335533;
+    --darker-color: #203029;
+  }
+}
+
+@media screen and (max-width: 64rem) {
+  :root {
+    --light-color: #88dd66;
+    --medium-color: #558844;
+    --dark-color: #335533;
+    --darker-color: #203020;
+  }
+}
+
+@media screen and (max-width: 48rem) {
+  :root {
+    --light-color: #66aedd;
+    --medium-color: #445f88;
+    --dark-color: #333c55;
+    --darker-color: #202230;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+  :root {
+    --light-color: #d366dd;
+    --medium-color: #804488;
+    --dark-color: #463355;
+    --darker-color: #282030;
+  }
 }
 
 * {
