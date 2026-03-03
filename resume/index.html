@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description" content="Matthew Ingram's Resume"/>
+  <meta name="author" content="Matthew Ingram"/>
+  <title>Matthew Ingram's Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<header class="container" id="top">
+  <!-- Main navigation -->
+  <nav class="primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main -->
+<main itemscope itemtype="https://schema.org/Person" class="container">
+  <h1 class="page-title" itemprop="name">Matthew Ingram</h1>
+
+  <section id="about">
+    <h2>Personal Details</h2>
+
+    <div class="bio">
+      <img itemprop="image" src="assets/img/me.jpg" alt="Matthew Ingram">
+      <p itemprop="description">
+        Short Bio Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti maxime distinctio numquam atque? Accusantium voluptatum alias similique voluptatibus! Sunt sit reiciendis earum, harum iusto accusantium aspernatur ullam tenetur, fuga fugit, quae voluptatem! Iste aliquid veritatis accusantium et cumque minima molestiae ducimus officiis. Beatae ad consequuntur fuga deleniti atque tempore error.
+      </p>
+    </div>
+
+    <dl class="details">
+      <dt>Name</dt>
+      <dd itemprop="name">
+        <span itemprop="givenName">Matthew</span> <span itemprop="familyName">Ingram</span>
+      </dd>
+
+      <dt>Date of birth</dt>
+      <dd><time itemprop="birthDate" datetime="2002-29-8">29/8/2002</time></dd>
+
+      <dt>Nationality</dt>
+      <dd itemprop="nationality">United States</dd>
+
+      <dt>Location</dt>
+      <!-- Keep original text, but model as Place for better schema correctness -->
+      <dd itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+        <span itemprop="name">Arkansas</span>
+      </dd>
+
+      <dt>Telephone</dt>
+      <dd>
+        <!-- tel: should be digits; keep visible text as-is -->
+        <a itemprop="telephone" href="tel:5013157503">555.555.555.5555</a>
+      </dd>
+
+      <dt>Email</dt>
+      <dd>
+        <a itemprop="email" href="mailto:mcingram@ualr.edu">mailto:mcingram@ualr.edu</a>
+      </dd>
+
+      <dt>Address</dt>
+      <dd itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+        <span itemprop="streetAddress">5008 Indigo Valley Rd</span>
+        <span itemprop="addressLocality">Benton</span>
+        <span itemprop="postalCode">72019</span>
+        <span itemprop="addressCountry">USA</span>
+      </dd>
+    </dl>
+
+    <ul class="related-links">
+      <li><a itemprop="sameAs" rel="me" href="https://github.com/Matthew-Ingram"> github</a></li>
+      <li><a itemprop="sameAs" rel="me" href="http://linkedin.com/profile">linkedin</a></li> <!-- I don't have a linkedin profile. -->
+      <li><a itemprop="url" href="assets/resources/resume.pdf" download>pdf resume</a></li> <!-- This resume is very out of date, but it is one that I had prepared. -->
+    </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li class="skill" itemprop="knowsAbout">HTML</li>
+      <li class="skill" itemprop="knowsAbout">CSS</li>
+      <li class="skill" itemprop="knowsAbout">C++</li>
+      <li class="skill" itemprop="knowsAbout">SQL</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <!-- current job -->
+    <article class="job">
+      <!-- jobTitle is valid on Person; this is still within Person scope -->
+      <h3 itemprop="jobTitle">Professional College Student</h3>
+
+      <!-- worksFor is valid on Person -->
+      <div itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">UA Little Rock</span>
+        <span>August 2021 - Present</span>
+
+        <p itemprop="description">It's UALR.</p>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://ualr.edu/">https://ualr.edu</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Arkansas, USA</span>
+          </span>
+        </span>
+      </div>
+    </article>
+
+    <!-- Previous Jobs -->
+    <article class="job">
+      <h3 itemprop="jobTitle">Teacher's Assistant</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Central Arkansas Homeschool Academy</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://www.cahaonline.org/">https://www.cahaonline.org</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Arkansas, USA</span>
+          </span>
+        </span>
+      </span>
+
+      <!-- Keep original visible date format; Google won't bind it perfectly, but it won't warn -->
+      <div>
+        <span>August 2019</span> -
+        <span>April 2020</span>
+      </div>
+
+      <p itemprop="description">Organized Supplies &middot; Oversaw Experiments &middot; Explained Main Ideas</p>
+    </article>
+
+    <article class="job">
+      <h3 itemprop="jobTitle">Assistant Librarian</h3>
+
+      <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization">
+        <span itemprop="name">Saline County Library</span>
+
+        <span itemprop="location" itemscope itemtype="https://schema.org/Place">
+          <a itemprop="url" href="https://www.salinecountylibrary.org/">https://www.salinecountylibrary.org</a>
+          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+            <span itemprop="addressLocality">Arkansas, USA</span>
+          </span>
+        </span>
+      </span>
+
+      <div>
+        <span>June 2019</span> -
+        <span>August 2019</span>
+      </div>
+
+      <p itemprop="description">Sorted Books &middot; Read to Others &middot; Maintained Cleanliness</p>
+    </article>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <article class="certificate" itemprop="alumniOf" itemscope itemtype="https://schema.org/EducationalOrganization">
+      <h3 itemprop="description"><abbr title="Bachelor of Science">BS</abbr> Computer Science</h3>
+      <span itemprop="name">UA Little Rock</span>
+      <span itemprop="location" itemscope>Arkansas, USA</span>
+      <span>2021-2027</span>
+    </article>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div id="copyright">
+    &copy; 2026 Matthew Ingram | <a href="#top">Top</a>
+  </div>
+</footer>
+ 
+</html>
