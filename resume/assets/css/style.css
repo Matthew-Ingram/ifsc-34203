@@ -18,6 +18,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  min-width: 0;
 }
 
 /* ------ Helper Classes -------*/
@@ -47,7 +48,7 @@ img {
 /* ------ Design Time -------*/
 
 .container {
-  width: 80%;
+  width: 80vw;
   margin: 0 auto;
   background: var(--light-shadow);
 }
@@ -66,15 +67,16 @@ a:visited {
 
 nav {
   padding: 1px;
-}
-nav ul {
-  display: grid;
-  grid-template: repeat(4, 1fr) / 1fr;
-  padding: 20px 20px 0px 20px;
-  gap: 20px;
-}
-nav li {
-  list-style-type: none;
+
+  & ul {
+    display: grid;
+    grid-template: repeat(4, 1fr) / 1fr;
+    padding: 20px 20px 0px 20px;
+    gap: 20px;
+  }
+  & li {
+    list-style-type: none;
+  }
 }
 
 nav a:link, nav a:visited {
@@ -109,21 +111,22 @@ main h1 {
   text-align: center;
   font-weight: 400;
   font-variant: small-caps;
-}
-main h1:before,
-main h1:after {
-  background-color: var(--accent-color-1);
-  content: "\a0";
-  flex-grow: 1;
-  height: 1px;
-  position: relative;
-  top: 0.77em;
-}
-main h1:before {
-  margin-right: 15px;
-}
-main h1:after {
-  margin-left: 15px;
+
+  &:before,
+  &:after {
+    background-color: var(--accent-color-1);
+    content: "\a0";
+    flex-grow: 1;
+    height: 1px;
+    position: relative;
+    top: 0.77em;
+  }
+  &:before {
+    margin-right: 15px;
+  }
+  &:after {
+    margin-left: 15px;
+  }
 }
 
 .bio img {
@@ -138,44 +141,53 @@ main h1:after {
 #experience a, .details a {
   color: var(--highlight-1);
   transition: color 0.5s ease;
-}
-#experience a:hover, .details a:hover {
-  color: var(--highlight-1-hover);
+
+  &:hover {
+    color: var(--highlight-1-hover);
+  }
 }
 
 dl {
-  font-size: .8rem;
-  display: grid;
-  /*shorthand*/
-  grid-template: repeat(8, 3em) / 8em 1fr;
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 0.8rem;
 }
 dt {
+  flex: 1 30%;
   font-weight: 800;
   grid-column: 1;
   padding: 10px 0;
   border-bottom: 1px solid var(--accent-color-1);
 }
 dd {
+  flex: 1 70%;
   margin: 0;
   grid-column: 2;
   padding: 10px 0;
   border-bottom: 1px solid var(--accent-color-1);
 }
+dt:first-of-type, dd:first-of-type {
+  border-top: 1px solid var(--accent-color-1);
+}
 
 .related-links {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   list-style: none;
+  gap: 30px;
   padding: 0;
-}
-.related-links .svg-inline--fa {
-  font-size: 1.8em;
-  padding-top: 7px;
+
+  & .svg-inline--fa {
+    font-size: 1.8em;
+    padding-top: 7px;
+  }
 }
 
 .related-links a {
   border: 1px solid var(--accent-color-1);
-  padding: 0.75em 1.5em;
+  padding: 0.75em 4.5em;
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
@@ -185,15 +197,11 @@ dd {
   background: rgba(0, 0, 0, 0.65);
   transition: font-size 0.5s ease, background-color 0.5s ease;
   color: #fff;
-}
 
-.related-links a:hover {
-  font-size: 1.0em;
-  background: rgba(0, 0, 0, 0.95);
-}
-
-.related-links li {
-  margin-right: 20px;
+  &:hover {
+    font-size: 1.0em;
+    background: rgba(0, 0, 0, 0.95);
+  }
 }
 
 #skills li {
@@ -252,12 +260,24 @@ main.container {
   grid-area: education;
 }
 
+/* Smaller mobile view by default. */
+
+/* Larger mobile view. */
 @media screen and (min-width: 40rem) {
   nav ul {
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
   }
+
+  .related-links {
+    flex-direction: row;
+
+    & a {
+      padding: 0.75em 1.5em;
+    }
+  }
 }
 
+/* Smaller tablet view. */
 @media screen and (min-width: 48rem) {
   main.container {
     grid-template-areas:
@@ -274,6 +294,7 @@ main.container {
   }
 }
 
+/* Larger tablet view. */
 @media screen and (min-width: 64rem) {
   .bio img {
     float: right;
@@ -284,11 +305,13 @@ main.container {
   }
 }
 
+/* Smaller desktop view. */
 @media screen and (min-width: 80rem) {
   nav ul {
     grid-template: 1fr / repeat(4, 1fr);
   }
 }
 
+/* Larger desktop view. */
 @media screen and (min-width: 96rem) {
 }
