@@ -2,7 +2,8 @@
 
 /* CSS Custom Properties */
 :root{
-  --main-bg-color: #efefef;
+  --main-bg-color: #1155aa;
+  --dark-bg-color: #022244;
   --primary-type-color: #333333;
   --accent-color-1: #777777;
   --light-shadow: rgba(0, 0, 0, 0.15);
@@ -47,15 +48,20 @@ img {
 
 /* ------ Design Time -------*/
 
-.container {
+.container, footer {
   width: 80vw;
   margin: 0 auto;
-  background: var(--light-shadow);
+  background: #ffffff;
+}
+
+header {
+  border-radius: 20px 20px 0 0;
 }
 
 /* ------ Global Styles -------*/
 body {
   background: var(--main-bg-color);
+  background-image: linear-gradient(to bottom, var(--main-bg-color), var(--dark-bg-color));
   color: var(--primary-type-color);
   line-height: 1.6;
 }
@@ -138,7 +144,7 @@ main h1 {
   box-shadow: 0 0 10px var(--med-shadow);
 }
 
-#experience a, .details a {
+#experience a, .details a, #copyright a {
   color: var(--highlight-1);
   transition: color 0.5s ease;
 
@@ -230,8 +236,8 @@ dt:first-of-type, dd:first-of-type {
 footer {
   text-align: center;
   padding: 20px 0;
+  border-radius: 0 0 20px 20px;
 }
-
 
 /* Reorder Source Using Grid */
 main.container {
