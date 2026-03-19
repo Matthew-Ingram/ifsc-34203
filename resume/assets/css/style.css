@@ -130,10 +130,10 @@ main h1 {
     top: 0.77em;
   }
   &:before {
-    margin-right: 15px;
+    margin-right: 5px;
   }
   &:after {
-    margin-left: 15px;
+    margin-left: 5px;
   }
 }
 
@@ -191,7 +191,7 @@ dt:first-of-type, dd:first-of-type {
 
 .related-links a {
   border: 1px solid var(--accent-color-1);
-  padding: 0.75em 4.5em;
+  padding: 0.75em 3.5em;
   border-radius: 10px;
   text-align: center;
   text-decoration: none;
@@ -313,6 +313,15 @@ main.container {
 @media screen and (min-width: 40rem) {
   nav ul {
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  }
+
+  main h1 {
+    &:before {
+      margin-right: 15px;
+    }
+    &:after {
+      margin-left: 15px;
+    }
   }
 
   .related-links {
