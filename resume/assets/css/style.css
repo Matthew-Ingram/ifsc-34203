@@ -10,6 +10,8 @@
   --med-shadow: rgba(0, 0, 0, 0.25);
   --highlight-1: #0033ff;
   --highlight-1-hover: #2277ff;
+  --button-link-1: rgba(0, 0, 0, 0.65);
+  --button-link-1-hover: rgba(0, 0, 0, 0.95);
 }
 
 html {
@@ -95,7 +97,7 @@ nav a:link, nav a:visited {
   color: var(--primary-type-color);
   text-transform: uppercase;
   font-size: 0.75em;
-  background: rgba(0, 0, 0, 0.65);
+  background: var(--button-link-1);
   transition: padding 0.5s ease, font-size 0.5s ease, background-color 0.5s ease;
   color: #ffffff;
 }
@@ -103,7 +105,7 @@ nav a:link, nav a:visited {
 nav a:hover {
   padding: 0.35em 1.5em;
   font-size: 1.0em;
-  background: rgba(0, 0, 0, 0.95);
+  background: var(--button-link-1-hover);
 }
 
 main {
@@ -184,11 +186,7 @@ dt:first-of-type, dd:first-of-type {
   list-style: none;
   gap: 30px;
   padding: 0;
-
-  & .svg-inline--fa {
-    font-size: 1.8em;
-    padding-top: 7px;
-  }
+  margin-top: 2em;
 }
 
 .related-links a {
@@ -200,13 +198,13 @@ dt:first-of-type, dd:first-of-type {
   color: #222222;
   text-transform: uppercase;
   font-size: 0.75em;
-  background: rgba(0, 0, 0, 0.65);
+  background: var(--button-link-1);
   transition: font-size 0.5s ease, background-color 0.5s ease;
   color: #fff;
 
   &:hover {
     font-size: 1.0em;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--button-link-1-hover);
   }
 }
 
@@ -267,6 +265,49 @@ main.container {
 }
 
 /* Smaller mobile view by default. */
+
+/* Custom view for related links icons. */
+@media screen and (min-width: 24rem) {
+  .related-links {
+    margin-top: 1em;
+
+    /* All of the following CSS is weird, but it inserts favicons (or images in general) into the page where there originally was not */
+    /* a designation for an image. */
+    /* I mainly wanted to experiment with whether or not it would be possible to add images for the related links without updating the HTML */
+    /* or using JavaScript. */
+
+    --rl-icon-size: 24px;
+    --rl-icon-padding: 4px;
+    --rl-icon-border-size: 2px;
+    & > * {
+      &:nth-child(1):before {
+        background-image: url(https://github.githubassets.com/favicons/favicon.png);
+      }
+      &:nth-child(2):before {
+        background-image: url(https://static.licdn.com/aero-v1/sc/h/al2o9zrvru7aqj8e1x2rzsrca);
+      }
+      &:nth-child(3):before {
+        background-image: url(https://acrobat.adobe.com/favicon.ico);
+      }
+      &:before {
+        display: inline-block;
+        content: "";
+        background-size: var(--rl-icon-size) var(--rl-icon-size);
+        background-repeat: no-repeat;
+        background-position: var(--rl-icon-padding) var(--rl-icon-padding);
+        width: var(--rl-icon-size);
+        height: var(--rl-icon-size);
+        position: relative;
+        top: calc((var(--rl-icon-size) / 2) + var(--rl-icon-border-size));
+        right: 4px;
+        padding: var(--rl-icon-padding);
+        box-sizing: content-box;
+        border: var(--rl-icon-border-size) solid var(--button-link-1);
+        border-radius: 10px;
+      }
+    }
+  }
+}
 
 /* Larger mobile view. */
 @media screen and (min-width: 40rem) {
