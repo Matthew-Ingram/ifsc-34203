@@ -13,6 +13,7 @@
 body {
   font-family: 'Roboto Condensed', sans-serif;
   background-color: var(--darker-color);
+  transition: background-color 0.25s ease;
   margin: 0;
 }
 

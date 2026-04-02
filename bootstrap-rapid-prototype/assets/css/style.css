@@ -1,0 +1,5 @@
+/* Did a little testing with CSS wildcards. */
+
+*[class^="col-"] {
+    background-color: red;
+}
