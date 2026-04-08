@@ -1,5 +1,26 @@
 /* Did a little testing with CSS wildcards. */
 
+/*
 *[class^="col-"] {
     background-color: red;
+}
+*/
+
+header {
+    background: #f80;
+    background-image: linear-gradient(to right, #f80, #40b);
+
+    & h1 {
+        text-shadow: 2px 2px 0 #000, 2px -2px 0 #000, -2px -2px 0 #000, -2px 2px 0 #000,
+        2px 0 0 #000, 0 -2px 0 #000, 0 -2px 0 #000, -2px 0 0 #000;
+    }
+}
+
+.sidebar {
+    background: #f8f8f8;
+    background-image: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
+}
+
+main > * {
+    min-height: 816px;
 }
