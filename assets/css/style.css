@@ -1,6 +1,6 @@
 :root {
   --light-color: #dd6666;
-  --medium-color: #88444d;
+  --medium-color: #924650;
   --dark-color: #553341;
   --darker-color: #302029;
 }
@@ -23,7 +23,7 @@ body {
 	margin: 20px auto;
   padding: 20px;
 	text-align: left;
-	background-color: #ffffff;
+	background-color: #fff;
 	border: 1px solid #cccccc;
   border-radius: 10px;
   border: 5px solid #ffffff;
@@ -36,10 +36,14 @@ body {
   }
 }
 
+h1 {
+  margin-bottom: 16px;
+}
+
 a {
   color: var(--light-color);
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
   transition: color 0.25s ease, text-shadow 0.25s ease;
+  font-weight: bold;
 
   &:visited {
     color: var(--medium-color);
@@ -55,19 +59,34 @@ a {
   }
 }
 
-ul {
-  padding-left: 1em;
+nav > ul {
+  padding-left: 0.5em;
+}
 
-  & li {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
+ul li:not(.accordion) {
+  padding-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+.accordion .accordion-tab:focus .accordion-title {
+  background-color: var(--light-color);
+  color: #000;
+}
+
+.viewport-colorizer-widget {
+  padding: 0.5em;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
+  background-color: hsl(calc(256 - ((100vw / 96rem) * 256)), 100%, 50%);
+  border: 2px solid #000;
+  border-radius: 5px;
+  max-width: 24em;
 }
 
 @media screen and (max-width: 96rem) {
   :root {
     --light-color: #ddaa66;
-    --medium-color: #885944;
+    --medium-color: #945f47;
     --dark-color: #553333;
     --darker-color: #302027;
   }
@@ -75,8 +94,8 @@ ul {
 
 @media screen and (max-width: 80rem) {
   :root {
-    --light-color: #cbdd66;
-    --medium-color: #6e8844;
+    --light-color: #bdce5f;
+    --medium-color: #759246;
     --dark-color: #335533;
     --darker-color: #203029;
   }
@@ -85,7 +104,7 @@ ul {
 @media screen and (max-width: 64rem) {
   :root {
     --light-color: #88dd66;
-    --medium-color: #558844;
+    --medium-color: #5a9446;
     --dark-color: #335533;
     --darker-color: #203020;
   }
@@ -94,7 +113,7 @@ ul {
 @media screen and (max-width: 48rem) {
   :root {
     --light-color: #66aedd;
-    --medium-color: #445f88;
+    --medium-color: #476694;
     --dark-color: #333c55;
     --darker-color: #202230;
   }
@@ -103,7 +122,7 @@ ul {
 @media screen and (max-width: 40rem) {
   :root {
     --light-color: #d366dd;
-    --medium-color: #804488;
+    --medium-color: #8b4794;
     --dark-color: #463355;
     --darker-color: #282030;
   }
