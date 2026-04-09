@@ -36,8 +36,29 @@ body {
   }
 }
 
-h1 {
+header {
   margin-bottom: 16px;
+
+  & h1 {
+    text-align: center;
+  }
+  & a {
+    background-image: url(https://avatars.githubusercontent.com/u/99311642?v=4);
+    background-size: 32px 32px;
+    float: right;
+    width: 32px;
+    height: 32px;
+    text-indent: 100%;
+	  white-space: nowrap;
+	  overflow: hidden;
+    border-radius: 25%;
+    border: 2px solid #ccc;
+    transition: border 0.5s ease;
+
+    &:hover {
+      border: 2px solid var(--light-color);
+    }
+  }
 }
 
 a {

@@ -8,6 +8,7 @@
   & .accordion-tab {
     overflow-y: hidden;
     transition: max-height 0.5s ease-in;
+    cursor: pointer;
 
     --accordion-title-height: calc(2em + 2px);
     --accordion-sm: calc(4em + var(--accordion-title-height));
