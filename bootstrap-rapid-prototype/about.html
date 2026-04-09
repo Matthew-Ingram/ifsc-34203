@@ -14,18 +14,32 @@
         <h1 class="h3 mx-3 my-0"><a href="index.html" title="Go to Home page" class="text-white text-decoration-none">HTML & CSS Site Project</a></h1>
         <nav>
             <ul class="d-flex justify-content-end my-0 list-inline">
-                <li class="list-inline-item"><button type="button" class="btn btn-dark mx-3"><a href="index.html" title="Home" class="text-white text-decoration-none">Home</a></button></li>
-                <li class="list-inline-item"><button type="button" class="btn btn-dark mx-3"><a href="start-here.html" title="Start Here" class="text-white text-decoration-none">Start Here</a></button></li>
-                <li class="list-inline-item"><button type="button" class="btn btn-dark mx-3"><a href="html.html" title="HTML" class="text-white text-decoration-none">HTML</a></button></li>
-                <li class="list-inline-item"><button type="button" class="btn btn-dark mx-3"><a href="css.html" title="CSS" class="text-white text-decoration-none">CSS</a></button></li>
-                <li class="list-inline-item"><button type="button" class="btn btn-dark mx-3"><a href="about.html" title="About" class="text-white text-decoration-none">About</a></button></li>
+                <li class="list-inline-item d-none d-lg-block"><button type="button" class="btn btn-dark mx-3"><a href="index.html" title="Home" class="text-white text-decoration-none">Home</a></button></li>
+                <li class="list-inline-item d-none d-lg-block"><button type="button" class="btn btn-dark mx-3"><a href="start-here.html" title="Start Here" class="text-white text-decoration-none">Start Here</a></button></li>
+                <li class="list-inline-item d-none d-lg-block"><button type="button" class="btn btn-dark mx-3"><a href="html.html" title="HTML" class="text-white text-decoration-none">HTML</a></button></li>
+                <li class="list-inline-item d-none d-lg-block"><button type="button" class="btn btn-dark mx-3"><a href="css.html" title="CSS" class="text-white text-decoration-none">CSS</a></button></li>
+                <li class="list-inline-item d-none d-lg-block"><button type="button" class="btn btn-dark mx-3"><a href="about.html" title="About" class="text-white text-decoration-none">About</a></button></li>
+                <li>
+                    <div class="dropdown d-block d-lg-none">
+                    <button class="btn btn-secondary dropdown-toggle btn-dark mx-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html" title="Home" class="dropdown-item">Home</a></li>
+                        <li><a href="start-here.html" title="Start Here" class="dropdown-item">Start Here</a></li>
+                        <li><a href="html.html" title="HTML" class="dropdown-item">HTML</a></li>
+                        <li><a href="css.html" title="CSS" class="dropdown-item">CSS</a></li>
+                        <li><a href="about.html" title="About" class="dropdown-item">About</a></li>
+                    </ul>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
     <main class="container-fluid">
         <div class="row">
-            <nav class="col-2 sidebar">
-                <ol class="list-unstyled my-5 ms-4 fixed-top pt-5">
+            <nav class="col-2 sidebar d-none d-md-block">
+                <ol class="list-unstyled m-3">
                     <li class="mb-2"><a href="#section-about" class="text-dark text-decoration-none"><b>About</b></a></li>
                     <li class="mb-2"><a href="#section-contact" class="text-dark text-decoration-none"><b>Contact</b></a></li>
                 </ol>
@@ -42,7 +56,7 @@
                     <button type="button" class="btn btn-dark mb-3"><a href="mailto:mcingram@ualr.edu" title="Send an email to the author" class="text-white text-decoration-none">Email Author</a></button>
                 </section>
             </section>
-            <div class="col-2 sidebar"></div>
+            <div class="col-2 sidebar d-none d-md-block"></div>
         </div>
     </main>
     <footer class="d-flex justify-content-center align-items-center p-4 bg-dark container-fluid">
