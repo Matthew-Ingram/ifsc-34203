@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="description" content="Matthew Ingram's Responsive Image Demo"/>
+  <meta name="author" content="Matthew Ingram"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matthew Ingram's Responsive Image Demo</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- "srcset" seems the most useful for most cases, but in this case, "sizes" helps to provide better mappings for different DPRs -->
+    <img src="assets/img/circle-250.jpg"
+    srcset="assets/img/circle-3000.jpg 3000w, 
+        assets/img/circle-2000.jpg 2000w,
+        assets/img/circle-1000.jpg 1000w,
+        assets/img/circle-750.jpg 750w,
+        assets/img/circle-500.jpg 500w,
+        assets/img/circle-250.jpg 250w"
+    sizes="(max-width: 250px) 250px,
+        (max-width: 500px) 500px,
+        (max-width: 750px) 750px,
+        (max-width: 1000px) 1000px,
+        (max-width: 2000px) 2000px,
+        3000px"
+    alt="Circle">
+</body>
+</html>
