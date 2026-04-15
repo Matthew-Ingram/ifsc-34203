@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: var(--darker-color);
   transition: background-color 0.25s ease;
   margin: 0;
@@ -96,9 +96,14 @@ ul li:not(.accordion) {
   padding-top: 0.5em;
 }
 
-.accordion .accordion-tab:focus .accordion-title {
-  background-color: var(--light-color);
-  color: #000;
+.accordion .accordion-tab:focus {
+  & .accordion-title {
+    background-color: var(--light-color);
+    color: #000;
+  }
+  &:before {
+    color: #000;
+  }
 }
 
 .viewport-colorizer-widget {
