@@ -10,7 +10,7 @@
     transition: max-height 0.5s ease-in;
     cursor: pointer;
 
-    --accordion-title-height: calc(2em + 2px);
+    --accordion-title-height: calc(2em + 1px);
     --accordion-sm: calc(4em + var(--accordion-title-height));
     --accordion-md: calc(8em + var(--accordion-title-height));
     --accordion-lg: calc(12em + var(--accordion-title-height));
@@ -37,6 +37,10 @@
     &.accordion-medium {
       max-height: var(--accordion-title-height);
       &:focus { max-height: var(--accordion-md); }
+    }
+    &.accordion-large {
+      max-height: var(--accordion-title-height);
+      &:focus { max-height: var(--accordion-lg); }
     }
     &.accordion-extra-large {
       max-height: var(--accordion-title-height);
