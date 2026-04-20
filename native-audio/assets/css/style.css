@@ -3,11 +3,16 @@
     padding: 0;
 }
 
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 article {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
     border: 5px solid #000;
     border-radius: 15px;
 }
