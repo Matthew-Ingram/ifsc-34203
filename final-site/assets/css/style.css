@@ -10,9 +10,28 @@
 	padding: 0;
 }
 
+/* Adapted from a Codepen by Professor Thomas Wallace */
+
 body {
-    height: 100vh
+    display: grid;
+    min-height: 100vh;
 }
+
+header.primary, footer.primary {
+    position: sticky;
+}
+
+header.primary {
+    top: 0;
+    height: 10vh;
+}
+
+footer.primary {
+    bottom: 0;
+    height: 10vh;
+}
+
+/******************************************************/
 
 img {
     max-width: 100%;
@@ -130,12 +149,7 @@ main {
     grid-template-columns: 4fr 15fr 4fr;
 
     & > * {
-        height: calc(80vh - 2em);
         padding: 1em;
-
-        &:not(div) {
-            overflow-y: scroll;
-        }
     }
     & .sidebar {
         background: #f8f8f8;
@@ -143,6 +157,11 @@ main {
 
         & ol {
             list-style-type: none;
+
+            /* Makes the list sticky, it needs the top to be pushed down to its normal position otherwise it falls
+            into the header as the page scrolls down. */
+            position: sticky;
+            top: calc(10vh + 1em);
 
             & li {
                 margin-bottom: 1em;
@@ -185,6 +204,9 @@ footer.primary {
     align-items: center;
     gap: var(--header-spacing-width);
 
+    /* Covers a small 1px-2px gap at bottom of screen below sticky footer on some display sizes. */
+    box-shadow: 0 2px 0 var(--color-soft-black);
+
     & > * {
         margin-top: var(--header-spacing-height);
         margin-bottom: var(--header-spacing-height);
@@ -218,10 +240,6 @@ footer.primary {
 
 @media screen and (max-width: 40rem) {
 /*@media screen and (min-width: 40rem) {*/
-    header.primary {
-        height: 15vh;
-    }
-
     main {
         display: block;
     }
@@ -229,9 +247,12 @@ footer.primary {
     .sidebar {
         display: none;
     }
+    
+    header.primary h1 {
+        font-size: calc(2em - (1.0em * ((40rem - 100vw) / 40rem)));
+    }
 
     footer.primary {
-        height: 5vh;
         gap: 0;
         justify-content: space-evenly;
         font-size: calc(1em - (0.5em * ((40rem - 100vw) / 40rem)));

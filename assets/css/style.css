@@ -43,10 +43,15 @@ header {
   padding-top: 20px;
   padding-bottom: 20px;
   border-bottom: 2px dashed #000;
+  margin-bottom: 20px;
 
   & h1 {
+    /*
     margin-left: 36px;
     margin-right: 36px;
+    */
+    margin-left: 44px;
+    margin-right: 44px;
     text-align: center;
   }
   & a {
@@ -120,6 +125,7 @@ footer {
   border-top: 2px dashed #000;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-top: 20px;
 }
 
 h6 {
@@ -150,6 +156,10 @@ h6 {
     --medium-color: #5a9446;
     --dark-color: #335533;
     --darker-color: #203020;
+  }
+
+  header h1 {
+    font-size: calc(2em - (1.0em * ((64rem - 100vw) / 64rem)));
   }
 }
 
