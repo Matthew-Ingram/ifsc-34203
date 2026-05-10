@@ -40,6 +40,10 @@ img {
 
 body {
   font-family: "Roboto Condensed", sans-serif;
+  
+  & p {
+    line-height: 1.5em;
+  }
 }
 
 h1 {
@@ -152,6 +156,8 @@ main .button-link {
 }
 
 main {
+    min-height: 80vh;
+
     & > * {
         padding: 1em;
     }
