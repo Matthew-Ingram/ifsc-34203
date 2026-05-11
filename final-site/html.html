@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Matthew Ingram's Mobile Web Development Final Project HTML page"/>
     <meta name="author" content="Matthew Ingram"/>
-    <title>HTML &amp; CSS Site Project - HTML</title>
+    <title>HTML & CSS Site Project - HTML</title>
     <link rel="stylesheet" href="../assets/css/accordion.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="shortcut icon" href="assets/img/favicon.ico"/>
@@ -38,8 +38,11 @@
     <main>
         <nav class="sidebar">
             <ol>
-                <li><a href="#section-welcome"><b>Welcome</b></a></li>
-                <li><a href="#section-pages"><b>Pages</b></a></li>
+                <li><a href="#section-introduction"><b>Introduction</b></a></li>
+                <li><a href="#section-head-elements-and-attributes"><b>Head Elements & Attributes</b></a></li>
+                <li><a href="#section-body-elements"><b>Body Elements</b></a></li>
+                <li><a href="#section-body-attributes"><b>Body Attributes</b></a></li>
+                <li><a href="#section-microdata"><b>Microdata</b></a></li>
             </ol>
         </nav>
         <section class="primary">
@@ -49,15 +52,179 @@
                 <p>
                     In website design, HTML can be considered the most important fundamental building block of a webpage, as HTML acts as the structural "markup" layer of a webpage.
                     HTML is used for holding and structuring the actual raw information of a webpage, as well as defining certain global traits of a page to communicate aspects of the page to browsers and web crawlers at a glance.
-                    In the markup of a webpage, everything is encapsulated in an "&lt;html&gt;" element, followed by the two major sections of the markup, the "&lt;head&gt;", used for storing global traits of a page, and the "&lt;body&gt;", used for storing everything else, namely the content to be shown/used in the page.
+                    In the markup of a webpage, everything is encapsulated in an <code>&lt;html&gt;</code> element, followed by the two major sections of the markup, the <code>&lt;head&gt;</code>, used for storing global traits of a page, and the <code>&lt;body&gt;</code>, used for storing everything else, namely the content to be shown/used in the page.
+                    The <code>&lt;html&gt;</code> element additionally has an attribute for defining the language of a page, such as <code>lang="en"</code> for English.
                 </p>
             </section>
-            <section id="section-etc">
-                <h2>ETC</h2>
+            <section id="section-head-elements-and-attributes">
+                <h2>Head Elements & Attributes</h2>
+                <h3>Title</h3>
                 <p>
-                    In website design, HTML can be considered the most important fundamental building block of a webpage, as HTML acts as the structural "markup" layer of a webpage.
-                    HTML is used for holding and structuring the actual raw information of a webpage, as well as defining certain global traits of a page to communicate aspects of the page to browsers and web crawlers at a glance.
-                    In the markup of a webpage, everything is encapsulated in an "&lt;html&gt;" element, followed by the two major sections of the markup, the "&lt;head&gt;", used for storing global traits of a page, and the "&lt;body&gt;", used for storing everything else, namely the content to be shown/used in the page.
+                    The title of a page can be specified with the <code>&lt;title&gt;</code> element.
+                    For instance, the current page uses the following for its title:<br/>
+                    <code>&lt;title&gt;HTML & CSS Site Project - HTML&lt;/title&gt;</code>
+                </p>
+                <h3>Character Set</h3>
+                <p>
+                    To define a character set for a given page, use the <code>&lt;meta&gt;</code> metatag with a <code>charset</code> attribute.
+                    There are various character sets to choose from, but a common pick is "utf-8", leading to the head element:<br/>
+                    <code>&lt;meta charset="utf-8"&gt;</code>
+                </p>
+                <h3>Description</h3>
+                <p>
+                    The description of a page can be defined using the <code>&lt;meta&gt;</code> metatag with a <code>name="description"</code> attribute, and a <code>content</code> attribute to define the description.
+                    This is typically used by browsers to show a quick description of what the page is about.
+                    For an example, the current page uses the following for its description:<br/>
+                    <code>&lt;meta name="description" content="Matthew Ingram's Mobile Web Development Final Project HTML page"/&gt;</code>
+                </p>
+                <h3>Author</h3>
+                <p>
+                    The author of a page can be defined using the <code>&lt;meta&gt;</code> metatag with a <code>name="author"</code> attribute, and a <code>content</code> attribute to define the author.
+                    For an example, the current page uses the following for its author:<br/>
+                    <code>&lt;meta name="author" content="Matthew Ingram"/&gt;</code>
+                </p>
+                <h3>Viewport</h3>
+                <p>
+                    The viewport of a page can be defined using the <code>&lt;meta&gt;</code> metatag with a <code>name="viewport"</code> attribute, and a <code>content</code> attribute to define its behavior.
+                    The <code>viewport</code> metatag is primarily important for responsive design with respect to differently sized devices.
+                    For an example, the current page uses the following standard format for the metatag:<br/>
+                    <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;</code>
+                </p>
+                <h3>Linking</h3>
+                <p>
+                    The page can be linked to other resources, such as a stylesheet or <span class="needs-explanation" title="favicon">shortcut icon</span>, using the <code>&lt;link&gt;</code> element, which is paired with a <code>rel</code> attribute defining the link's relationship with page contents, and a <code>href</code> attribute defining the location the link goes to.
+                    For instance, one way to link a stylesheet located in a "css-files" directory would be as follows:<br/>
+                    <code>&lt;link rel="stylesheet" href="css-files/style.css"/&gt;</code><br/>
+                    Another example would be for how to link up a <span class="needs-explanation" title="favicon">shortcut icon</span>, such as one located in an "img-files" directory:<br/>
+                    <code>&lt;link rel="shortcut icon" href="img-files/favicon.ico"/&gt;</code><br/>
+                </p>
+            </section>
+            <section id="section-body-elements">
+                <h2>Body Elements</h2>
+                <figure class="half-size-float-right">
+                    <img src="assets/img/html-semantics-50.jpg"
+                    srcset="assets/img/html-semantics-100.jpg 686w, 
+                        assets/img/html-semantics-75.jpg 515w,
+                        assets/img/html-semantics-50.jpg 343w"
+                    sizes="(min-width: 64rem) 50%,
+                        100%"
+                    alt="Image of HTML5 structural elements"/>
+                    <figcaption>
+                        <p>
+                            An example of HTML5 structural elements.<br/>
+                            From: <a href="https://learn.shayhowe.com/html-css/getting-to-know-html/#building-struture" title="Go to source">https://learn.shayhowe.com/html-css/getting-to-know-html/#building-struture</a>
+                        </p>
+                    </figcaption>
+                </figure>
+                <h3>Header</h3>
+                <p>
+                    The <code>&lt;header&gt;</code> element relates to introductory or navigational content, a major heading.
+                </p>
+                <h3>Main</h3>
+                <p>
+                    The <code>&lt;main&gt;</code> element encapsulates the primary content of a page, typically being preceeded by a <code>&lt;header&gt;</code> element, and being followed by a <code>&lt;footer&gt;</code> element.
+                </p>
+                <h3>Sections</h3>
+                <p>
+                    The <code>&lt;section&gt;</code> element encapsulates a group of other elements, all of which follow the same theme, such as paragraphs and figures about a topic.
+                </p>
+                <h3>Articles</h3>
+                <p>
+                    The <code>&lt;article&gt;</code> element encapsulates a group of other elements, all of which follow the same theme, and are self-contained within the scope of the <code>&lt;article&gt;</code>, such as the text and images of a single news article.
+                </p>
+                <h3>Asides</h3>
+                <p>
+                    The <code>&lt;aside&gt;</code> element encapsulates a group of other elements which follow the same general theme as surrounding elements, but does not have to directly tie in to the other elements.
+                    An <code>&lt;aside&gt;</code> element should not be greatly important to the main flow of a page, it should be completely fine to remove the element without majorly disrupting the experience of the page.
+                </p>
+                <h3>Footer</h3>
+                <p>
+                    The <code>&lt;footer&gt;</code> element relates to additional information that closes out another element, such as links to related content or copywrite information.
+                </p>
+                <h3>Navs</h3>
+                <p>
+                    The <code>&lt;nav&gt;</code> element relates to navigational elements, typically a list of links to parts of the current page, or to other pages.
+                </p>
+            </section>
+            <section id="section-body-attributes">
+                <h2>Body Attributes</h2>
+                <h3>Element Class</h3>
+                <p>
+                    An element can be given a <code>class</code> attribute for selection via CSS in order to style only elements of that class.
+                    For example, adding a "color-this-red" <code>class</code> to a <code>&lt;p&gt;</code> element can be done like so:<br/>
+                    <code>&lt;p class="color-this-red"&gt;Text goes here!&lt;/p&gt;</code>
+                </p>
+                <h3>Element ID</h3>
+                <p>
+                    An element can be given an <code>id</code> attribute for selection via CSS in order to style only one unique element, which differs from <code>class</code> attributes which may be used on multiple elements.
+                    For example, adding a "page-title" <code>id</code> to a <code>&lt;h1&gt;</code> element can be done like so:<br/>
+                    <code>&lt;h1 id="page-title"&gt;Insert page title here!&lt;/h1&gt;</code>
+                </p>
+                <h3>Element Hyperlink</h3>
+                <p>
+                    An element can be given an <code>href</code> attribute to indicate a hyperlink location for the element to point to, usually via creating a link with the <code>&lt;a&gt;</code> element.
+                    The <code>href</code> attribute can also be used to link to elements with an <code>id</code> attribute, or back to the top of the current page.
+                    An example showing how to link back to the top of the current page is as follows:<br/>
+                    <code>&lt;a href="#top"&gt;Back to Top&lt;/a&gt;</code>
+                </p>
+                <h3>Element Title</h3>
+                <p>
+                    An element can be given a <code>title</code> attribute to allow for a text popup to show up after hovering over the element.
+                    An example of a <code>title</code> attribute in code is as follows:<br/>
+                    <code>&lt;p title="This is a title!"&gt;This text has a title!&lt;/p&gt;</code><br/>
+                    The element generated by the previous code is as follows:<br/>
+                    <p title="This is a title!">This text has a title!</p>
+                </p>
+                <h3>Image Source</h3>
+                <p>
+                    An <code>&lt;img&gt;</code> element can be given a <code>src</code> attribute to indicate the location of the image to be displayed.
+                    An example of linking up an image stored in an "img" directory titled "cool-image" would be as follows:<br/>
+                    <code>&lt;img src="img/cool-image"/&gt;</code>
+                </p>
+                <h3>Image Alternate Text</h3>
+                <p>
+                    An <code>&lt;img&gt;</code> element can be given an <code>alt</code> attribute to provide alternate text for an image, which can help to provide text for screen readers.
+                    An example of alt text being added to the previous image in the "Image Source" section could be:<br/>
+                    <code>&lt;img src="img/cool-image" alt="A very cool image"/&gt;</code>
+                </p>
+            </section>
+            <section id="section-responsive-images">
+                <h2>Responsive Images</h2>
+                <h3>Image Source Set</h3>
+                <p>
+                    An <code>&lt;img&gt;</code> element can be given a <code>srcset</code> attribute to indicate the locations of the different images to be displayed, where the different images are usually different sizes of the same image.
+                    An example of linking up the images for a <code>srcset</code> where all images are in an "img" directory, and are titled as "responsive" along with their size in pixels is as follows:<br/>
+                    <code>&lt;img srcset="img/responsive-1000px.jpg 1000w, img/responsive-800px.jpg 800w, img/responsive-500px.jpg 500w"/&gt;</code><br/>
+                    Each image image source is paired with its size in "w" width units, and the list of the source-width pairs is comma-separated.
+                </p>
+                <h3>Image Sizes</h3>
+                <p>
+                    An <code>&lt;img&gt;</code> element can be given a <code>sizes</code> attribute along with a <code>srcset</code> attribute to indicate the intended display sizes of the image, this is primarily useful for having the image be responsive to CSS breakpoints.
+                    An example of a <code>sizes</code> attribute where the image element has a breakpoint of "64rem" at which it will have a width of "50vw", and otherwise the image will be "100vw", is as follows:<br/>
+                    <code>&lt;img srcset="img/responsive-1000px.jpg 1000w, img/responsive-800px.jpg 800w, img/responsive-500px.jpg 500w" sizes="(min-width: 64rem) 50vw, 100vw"/&gt;</code><br/>
+                </p>
+            </section>
+            <section id="section-microdata">
+                <h2>Microdata</h2>
+                <h3>Item Scope</h3>
+                <p>
+                    The <code>itemscope</code> attribute indicates that an item is created and defined by this element and its descendents.
+                </p>
+                <h3>Item Type</h3>
+                <p>
+                    The <code>itemtype</code> attribute indicates what type of item is to be described and its properties context by linking a vocabulary by URL.
+                </p>
+                <h3>Item ID</h3>
+                <p>
+                    The <code>itemid</code> attribute indicates a unique identifier for the item.
+                </p>
+                <h3>Item Property</h3>
+                <p>
+                    The <code>itemprop</code> attribute indicates the property that an element will satisfy of the item described by the vocabulary.
+                </p>
+                <h3>Item Reference</h3>
+                <p>
+                    The <code>itemref</code> attribute indicates non-descendent elements that satisfy properties of the item described by the vocabulary, this is given by a list of <code>id</code>s to identify those other elements.
                 </p>
             </section>
         </section>

@@ -40,10 +40,6 @@ img {
 
 body {
   font-family: "Roboto Condensed", sans-serif;
-
-  & p {
-    line-height: 1.5em;
-  }
 }
 
 h1 {
@@ -155,6 +151,27 @@ main .button-link {
     margin-top: 0.5em;
 }
 
+figure {
+    padding: 0.5em;
+    border: 2px solid #e8e8e8;
+    border-radius: 5px;
+    margin: 1em;
+
+    & figcaption {
+        padding-top: 0.5em;
+
+        & a {
+            color: var(--color-soft-black)
+        }
+    }
+}
+
+.half-size-float-right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 main {
     min-height: 80vh;
 
@@ -191,6 +208,9 @@ main {
         & h1 {
             margin-bottom: 2em;
         }
+        & p {
+            line-height: 1.5em;
+        }
     }
 }
 
@@ -218,6 +238,29 @@ article {
     }
     & > * {
         padding: 0.5em;
+    }
+}
+
+code {
+    display: inline-block;
+    background-color: #e8e8e8;
+    padding-right: 0.25em;
+    padding-left: 0.25em;
+    border-radius: 0.25em;
+    transition: background-color 0.5s ease, color 0.5s ease;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.needs-explanation {
+    text-decoration: underline;
+    cursor: help;
+
+    &:hover {
+        text-decoration: none;
     }
 }
 
@@ -311,6 +354,12 @@ footer.primary {
 
     .article-group {
         grid-template: 1fr / repeat(4, 1fr);
+    }
+
+    .half-size-float-right {
+        float: right;
+        width: 50%;
+        margin: 1em;
     }
 }
 
