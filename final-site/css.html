@@ -8,6 +8,7 @@
     <title>HTML & CSS Site Project - CSS</title>
     <link rel="stylesheet" href="../assets/css/accordion.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="stylesheet" href="assets/css/example-styles.css"/>
     <link rel="shortcut icon" href="assets/img/favicon.ico"/>
 </head>
 <body>
@@ -43,7 +44,6 @@
                 <li><a href="#section-properties-and-box-model"><b>Properties & Box Model</b></a></li>
                 <li><a href="#section-flexbox"><b>CSS Flexbox</b></a></li>
                 <li><a href="#section-grid"><b>CSS Grid</b></a></li>
-                <li><a href="#section-custom-properties"><b>Custom Properties</b></a></li>
                 <li><a href="#section-media-queries"><b>Media Queries</b></a></li>
             </ol>
         </nav>
@@ -62,56 +62,172 @@
             </section>
             <section id="section-selectors">
                 <h2>Selectors</h2>
+                <h3>Intro</h3>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    In CSS, HTML elements are targetted by the use of "selectors".
+                    For instance, selecting a <code>&lt;header&gt;</code> element is as simple as using the following selector:<br/>
+                    <code>header {}</code><br/>
+                    This will then select every <code>&lt;header&gt;</code> element on the page.
+                </p>
+                <h3>Any Descendent</h3>
+                <p>
+                    If you only want to select something that is a descendent of a certain element, you can put the descentent after the ancestor element, for instance, to select any <code>&lt;nav&gt;</code> element in a <code>&lt;header&gt;</code> element, you could use:<br/>
+                    <code>header nav {}</code><br/>
+                </p>
+                <h3>Direct Child</h3>
+                <p>
+                    To select only direct child elements of a parent element, such as only selecting <code>&lt;p&gt;</code> elements that are direct children of <code>&lt;section&gt;</code> elements, you can use the following form:<br/>
+                    <code>section > p {}</code><br/>
+                </p>
+                <h3>Class</h3>
+                <p>
+                    To select elements by their class, you can use the "." operator.
+                    If the "." operator is used on its own, it will target the elements of that class, but if the "." is attacted to the name of an element, it will only select that type of element with that class. For example, to select any element with a class of "color-this-red", you could use the following:<br/>
+                    <code>.color-this-red {}</code><br/>
+                    If instead you would like to target only <code>&lt;p&gt;</code> elements with the "color-this-red" class, you could use the following:<br/>
+                    <code>p.color-this-red {}</code><br/>
+                </p>
+                <h3>Identifier</h3>
+                <p>
+                    To select elements by their id, you can use the "#" operator.
+                    For instance, if you want to select the element with the id of "intro-section", you could use the following:<br/>
+                </p>
+                <h3>Multiple Selectors</h3>
+                <p>
+                    <code>#intro-section {}</code><br/>
+                    You can chain multiple selectors to affect the same properties of the elements they select by comma-separating the selectors, like so:<br/>
+                    <code>section > p, p.color-this-red, header nav {}</code><br/>
                 </p>
             </section>
             <section id="section-properties-and-box-model">
                 <h2>Properties & Box Model</h2>
+                <h3>The Box Model</h3>
+                <figure class="half-size-float-right">
+                    <img src="assets/img/css-box-model-50.jpg"
+                    srcset="assets/img/css-box-model-100.jpg 960w, 
+                        assets/img/css-box-model-75.jpg 720w,
+                        assets/img/css-box-model-50.jpg 480w"
+                    sizes="(max-width: 40rem) 100vw,
+                        (max-width: 64rem) 65vw,
+                        33vw"
+                    alt="Image of CSS Box Model"/>
+                    <figcaption>
+                        <p>
+                            An example of the CSS box model.<br/>
+                        </p>
+                    </figcaption>
+                </figure>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    When using CSS, it is of great importance to understand the idea of the "box model", the idea that any given element can be reduced to a box with a <code>position</code>, a <code>margin</code>, a <code>border</code>, <code>padding</code>, and a pair of <code>width</code> and <code>height</code>.
+                </p>
+                <p>
+                    Each of the different properties of the box model can be adjusted in various ways.
+                    The <code>margin</code>, <code>padding</code>, <code>width</code>, and <code>height</code> can be set relatively simply, and in the case of <code>margin</code> and <code>padding</code>, the different sides can be set individually or all at once.
+                    An example of setting the <code>margin</code>, <code>padding</code>, <code>width</code>, and <code>height</code> of a <code>&lt;header&gt;</code> element is as follows:<br/>
+                    <code>
+                        header {<br/>
+                        &emsp;margin-left: 5px;<br/>
+                        &emsp;margin-top: 1em;<br/>
+                        &emsp;padding: 0.25em 1em 0 0.75em;<br/>
+                        &emsp;width: 240px;<br/>
+                        &emsp;height: 3em;<br/>
+                        }
+                    </code><br/>
+                    The <code>border</code> property can be adjusted to give a border to elements, for instance, the following code will cause an element to have a 2px, dashed, black border:<br/>
+                    <code>#black-border { border: 2px dashed #000; }</code><br/>
+                    This is what such an element would look like:<br/>
+                    <span id="black-border">This element has a black border!</span>
+                </p>
+                <h3>Text Properties</h3>
+                <p>
+                    Text can be modified using properties such as <code>color</code>, <code>text-decoration</code>, <code>text-shadow</code>, etc.
+                    Example code for the previous properties are shown below:<br/>
+                    <code>#blue-text { color: #00f; }</code><br/>
+                    <code>#underline-text { text-decoration: underline; }</code><br/>
+                    <code>#green-shadowy-text { text-shadow: 2px 2px 2px #0f0; }</code><br/>
+                    Example elements of the previous code snippets are below:<br/>
+                    <span id="blue-text">This text is blue!</span><br/>
+                    <span id="underline-text">This text is underlined!</span><br/>
+                    <span id="green-shadowy-text">This text has a green shadow!</span>
                 </p>
             </section>
             <section id="section-flexbox">
                 <h2>CSS Flexbox</h2>
+                <h3>Justify Content</h3>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    Oftentimes in website design, it would be visually appealing to have elements be placed around in a flexible, responsive manner.
+                    CSS Flexbox offers a nice way to do this via the use of the <code>display: flex;</code> property, then adjusting other flex-related properties.
+                    For an example, to justify multiple elements along the row of their container, you can use <code>flex-direction: row;</code> paired with the <code>justify-content</code> property, such as in the following code snippets and examples:
                 </p>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: flex-start; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-flex-start"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: center; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-center"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: flex-end; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-flex-end"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: space-between; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-space-between"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: space-around; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-space-around"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#flex-justify-flex-end { display: flex; flex-direction: row; justify-content: space-evenly; border: 1px solid #ccc; }</code></p>
+                <div id="flex-justify-space-evenly"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <h3>External Resources</h3>
+                <p>
+                    For an additional helpful resource for learning CSS Flexbox, take a look at Flexbox Froggy.
+                    Flexbox Froggy serves as an interactive, gamified, practical tutorial for how to use CSS Flexbox.
+                    Click the "Flexbox Froggy" button below to go to the webpage:
+                </p>
+                <a href="https://flexboxfroggy.com/" title="Go to Flexbox Froggy" class="button-link">Flexbox Froggy</a>
             </section>
             <section id="section-grid">
                 <h2>CSS Grid</h2>
+                <h3>Grid Template</h3>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    Oftentimes in website design, it would be visually appealing to have elements be placed around in a flexible, responsive manner, while simultaneously having those elements conform to a grid.
+                    CSS Grid offers a nice way to do this via the use of the <code>display: grid;</code> property, then adjusting other grid-related properties.
+                    For an example, to put three elements on a single column in a container, you can use <code>grid-template: repeat(3, 1fr) / 1fr;</code>, or you could do the same but on a single row using <code>grid-template: 1fr / repeat(3, 1fr);</code>, such as in the following code snippets and examples:
                 </p>
-            </section>
-            <section id="section-custom-properties">
-                <h2>Custom Properties</h2>
+                <p><code>#grid-three-in-column { display: grid; grid-template: repeat(3, 1fr) / 1fr; border: 1px solid #ccc; }</code></p>
+                <div id="grid-three-in-column"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <p><code>#grid-three-in-row { display: grid; grid-template: 1fr / repeat(3, 1fr); border: 1px solid #ccc; }</code></p>
+                <div id="grid-three-in-row"><p>Element 1</p><p>Element 2</p><p>Element 3</p></div>
+                <h3>External Resources</h3>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    For an additional helpful resource for learning CSS Grid, take a look at CSS Grid Garden.
+                    CSS Grid Garden provides a gamified, fairly robust tutorial for how to use CSS Grid.
+                    Click the "CSS Grid Garden" button below to go to the webpage:
                 </p>
+                <a href="https://cssgridgarden.com/" title="Go to CSS Grid Garden" class="button-link">CSS Grid Garden</a>
             </section>
             <section id="section-media-queries">
                 <h2>Media Queries</h2>
+                <h3>Intro</h3>
                 <p>
-                    In website design, CSS is a highly important building block of a webpage, as CSS acts as the presentational "style" layer of a webpage.
-                    CSS is used as a way to address elements for uniform or unique styling choices in a webpage, and can even allow for certain forms of interactability, without the use of heavier-handed solutions such as using JavaScript.
-                    Due to the fact that CSS is typically "linked" from the HTML head of the page it will be used to style, CSS is also highly reusable, as various pages of a website can all link back to a single, unified CSS file for styling.
-                    CSS additionally offers methods of responsive presentation, by allowing for elements of the page to be styled based on the width and height of the current viewport.
+                    For responsive webpages, it would be very helpful to know the height, and especially the width, of the current viewport.
+                    CSS offers a method of styling elements based on such viewport dimensions, using selectors known as "media queries".
+                    For viewport-related media queries, the syntax always begins with <code>@media screen and</code>, followed by the specific query.
+                </p>
+                <h3>Min-Width</h3>
+                <p>
+                    To style an element base on a minimum viewport size, such as "640px", you could use <code>@media screen and (min-width: 640px) {}</code>.
+                    Examples of media queries where a <code>&lt;p&gt;</code> element is colored differently based on viewport widths are shown below, with an example element following:<br/>
+                    <code>
+                        #min-width-coloration { color: #f00; }<br/>
+                        @media screen and (min-width: 40rem) { #min-width-coloration { color: #0f0; } }<br/>
+                        @media screen and (min-width: 64rem) { #min-width-coloration { color: #00f; } }<br/>
+                    </code><br/>
+                    <p id="min-width-coloration">This text changes color based on min-width!</p>
+                </p>
+                <h3>Max-Width</h3>
+                <p>
+                    To style an element base on a maximum viewport size, such as "640px", you could use <code>@media screen and (max-width: 640px) {}</code>.
+                    Examples of media queries where a <code>&lt;p&gt;</code> element is colored differently based on viewport widths are shown below, with an example element following:<br/>
+                    <code>
+                        #max-width-coloration { color: #f00; }<br/>
+                        @media screen and (max-width: 64rem) { #max-width-coloration { color: #0f0; } }<br/>
+                        @media screen and (max-width: 40rem) { #max-width-coloration { color: #00f; } }<br/>
+                    </code><br/>
+                    <p id="max-width-coloration">This text changes color based on max-width!</p>
                 </p>
             </section>
         </section>

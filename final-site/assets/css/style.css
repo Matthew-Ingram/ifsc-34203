@@ -156,6 +156,7 @@ figure {
     border: 2px solid #e8e8e8;
     border-radius: 5px;
     margin: 1em;
+    transition: box-shadow 1s ease;
 
     & figcaption {
         padding-top: 0.5em;
@@ -163,6 +164,9 @@ figure {
         & a {
             color: var(--color-soft-black)
         }
+    }
+    &:hover {
+        box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -244,8 +248,8 @@ article {
 code {
     display: inline-block;
     background-color: #e8e8e8;
-    padding-right: 0.25em;
     padding-left: 0.25em;
+    padding-right: 0.25em;
     border-radius: 0.25em;
     transition: background-color 0.5s ease, color 0.5s ease;
 
