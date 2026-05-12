@@ -5,6 +5,8 @@
     --color-soft-black: #111;
     --color-html-orange: #f80;
     --color-css-purple: #40b;
+    --color-very-light-gray: #f8f8f8;
+    --color-light-gray: #e8e8e8;
 }
 
 * {
@@ -143,7 +145,7 @@ header.primary {
         }
     }
     & li:hover {
-        background-color: #e8e8e8;
+        background-color: var(--color-light-gray);
     }
     & li a {
         color: var(--color-soft-black);
@@ -157,7 +159,7 @@ main .button-link {
 
 figure {
     padding: 0.5em;
-    border: 2px solid #e8e8e8;
+    border: 2px solid var(--color-light-gray);
     border-radius: 5px;
     margin: 1em;
     transition: box-shadow 1s ease;
@@ -188,8 +190,8 @@ main {
     }
     & .sidebar {
         display: none;
-        background: #f8f8f8;
-        background-image: linear-gradient(to bottom, #f8f8f8, #e8e8e8);
+        background: var(--color-very-light-gray);
+        background-image: linear-gradient(to bottom, var(--color-very-light-gray), var(--color-light-gray));
 
         & ol {
             list-style-type: none;
@@ -252,7 +254,7 @@ article {
 
 code {
     display: inline-block;
-    background-color: #e8e8e8;
+    background-color: var(--color-light-gray);
     padding-left: 0.25em;
     padding-right: 0.25em;
     border-radius: 0.25em;
