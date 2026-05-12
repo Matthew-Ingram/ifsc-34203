@@ -46,10 +46,6 @@ header {
   margin-bottom: 20px;
 
   & h1 {
-    /*
-    margin-left: 36px;
-    margin-right: 36px;
-    */
     margin-left: 44px;
     margin-right: 44px;
     text-align: center;
@@ -73,6 +69,11 @@ header {
   }
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
 a {
   color: var(--light-color);
   transition: color 0.25s ease, text-shadow 0.25s ease;
@@ -92,13 +93,23 @@ a {
   }
 }
 
-nav > ul {
-  padding-left: 0.5em;
+nav {
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #000;
+  margin-bottom: 20px;
+
+  & > ul {
+    padding-left: 0.5em;
+  }
 }
 
-ul li:not(.accordion) {
+ul li:not(.accordion), p {
   padding-bottom: 0.5em;
   padding-top: 0.5em;
+}
+
+p {
+  line-height: 1.5em;
 }
 
 .accordion .accordion-tab:focus {
