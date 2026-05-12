@@ -42,6 +42,13 @@ body {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+.hidden {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 h1 {
     text-align: center;
 }
@@ -120,9 +127,6 @@ header.primary {
     & .accordion-title, .accordion-tab:before {
         background-color: #000;
         color: #fff;
-    }
-    .accordion-tab:before {
-        top: 5px;
     }
     .accordion-tab > *:not(.accordion-title) {
         background-color: #fff;
@@ -234,14 +238,15 @@ article {
         background-color: #000;
         color: #fff;
         text-align: center;
+        padding: 0.5em;
 
         & a {
             color: #fff;
             text-decoration: none;
         }
     }
-    & > * {
-        padding: 0.5em;
+    .article-content > * {
+        margin: 0.5em;
     }
 }
 
